@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+           id="com.odysseymessaging.OdysseyPushNotification"
+      version="0.1.0">
+    <name>OdysseyPushNotification</name>
+    <description>Sample PhoneGap Calendar Plugin</description>
+    <license>MIT</license>
+    <keywords>phonegap</keywords>
+ 
+ 
+    <js-module src="www/OdysseyPushNotification.js" name="OdysseyPushNotification">
+        <clobbers target="OdysseyPushNotification" />
+    </js-module>
+ 
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="OdysseyPushNotification">
+                <param name="android-package" value="com.odysseymessaging.OdysseyPushNotification"/>
+            </feature>
+        </config-file>
+ 
+        <source-file src="src/android/com/odysseymessaging/OdysseyPushNotification/WSInvoker.java" target-dir="src/com/odysseymessaging/OdysseyPushNotification" />
+		<source-file src="src/android/com/odysseymessaging/OdysseyPushNotification/java-json.jar" target-dir="libs/" />
+		<source-file src="src/android/com/odysseymessaging/OdysseyPushNotification/commons-codec-1.9.jar" target-dir="libs/" />
+     </platform>         
+</plugin>
